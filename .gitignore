@@ -3,3 +3,7 @@
 
 # Ignore vim swap files
 *.swp
+
+# ignore config fir shared files
+docker-samba/etc/defaults/docker
+
