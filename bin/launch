@@ -6,6 +6,7 @@ if ! [ -d var/lib/samba ]; then
   mkdir -p var/lib
   docker run -a stdout ${CONTAINER_PREFIX}/samba-base tar c /var/lib/samba | 
     tar xvC var/lib/ 
+  mkdir var/lib/samba/private
 fi
 
 docker run -d \
@@ -15,8 +16,6 @@ docker run -d \
   -v ${GUEST_DIR}:/mnt/guest \
   -v ${SHARE_DIR}:/mnt/shared \
   -v ${HOME_DIR}:/home \
+  -p 138:138/udp -p 139:139 -p 445:445 -p 445:445/udp \
+  --name samba \
   ${CONTAINER_PREFIX}/samba-smbd $@
-
-docker run -d \
-  -v $PWD/etc/samba:/etc/samba \
-  ${CONTAINER_PREFIX}/samba-nmbd $@
