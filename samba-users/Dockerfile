@@ -1,6 +1,4 @@
-from ewindisch/samba-base
-
-maintainer Eric Windisch <eric@windisch.us>
+from macropage/samba-base
 
 env DEBIAN_FRONTEND noninteractive
 

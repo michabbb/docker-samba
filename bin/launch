@@ -1,12 +1,14 @@
 #!/bin/bash
 . etc/defaults/docker
-. $PWD/docker-samba.conf
 
 if ! [ -d var/lib/samba ]; then 
   mkdir -p var/lib
-  docker run -a stdout ${CONTAINER_PREFIX}/samba-base tar c /var/lib/samba | 
+  docker run -a stdout macropage/samba-base tar c /var/lib/samba | 
     tar xvC var/lib/ 
-  mkdir var/lib/samba/private
+fi
+
+if ! [ -d var/lib/samba/private ]; then 
+  mkdir -p var/lib/samba/private
 fi
 
 docker run -d \
@@ -18,4 +20,4 @@ docker run -d \
   -v ${HOME_DIR}:/home \
   -p 138:138/udp -p 139:139 -p 445:445 -p 445:445/udp \
   --name samba \
-  ${CONTAINER_PREFIX}/samba-smbd $@
+  macropage/samba-smbd $@

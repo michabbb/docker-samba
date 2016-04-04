@@ -1,7 +1,5 @@
 from ubuntu:latest
 
-maintainer Eric Windisch <eric@windisch.us>
-
 env DEBIAN_FRONTEND noninteractive
 
 # Enable "extra" users, this makes

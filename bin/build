@@ -1,7 +1,5 @@
 #!/bin/bash
-. $PWD/docker-samba.conf
 
-docker build -t ${CONTAINER_PREFIX}/samba-base samba-base
-docker build -t ${CONTAINER_PREFIX}/samba-smbd samba-smbd
-docker build -t ${CONTAINER_PREFIX}/samba-nmbd samba-nmbd
-docker build -t ${CONTAINER_PREFIX}/samba-users samba-users
+docker build -t macropage/samba-base samba-base
+docker build -t macropage/samba-smbd samba-smbd
+docker build -t macropage/samba-users samba-users
