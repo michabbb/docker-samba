@@ -1,5 +1,2 @@
 #!/bin/bash
-
-docker build -t macropage/samba-base samba-base
-docker build -t macropage/samba-smbd samba-smbd
-docker build -t macropage/samba-users samba-users
+docker build -t macropage/samba samba-base

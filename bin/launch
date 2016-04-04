@@ -20,4 +20,4 @@ docker run -d \
   -v ${HOME_DIR}:/home \
   -p 138:138/udp -p 139:139 -p 445:445 -p 445:445/udp \
   --name samba \
-  macropage/samba-smbd $@
+  macropage/samba $@

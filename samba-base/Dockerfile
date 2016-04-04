@@ -16,5 +16,12 @@ run apt-get install -y samba
 run mkdir -p /mnt/shared
 run mkdir -p /mnt/guest
 
+expose 445
+expose 139
+expose 135
+
 # Add user management tool
 add docker-smb-user /usr/local/bin/
+
+entrypoint ["/usr/sbin/smbd"]
+cmd ["-F", "-S"]

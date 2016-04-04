@@ -1,7 +1,2 @@
 #!/bin/bash
-
-docker run \
-  -v $PWD/etc/samba:/etc/samba \
-  -v $PWD/etc:/var/lib/extrausers \
-  -v $PWD/var/lib/samba:/var/lib/samba \
-  macropage/samba-users $@
+docker exec -it samba /usr/local/bin/docker-smb-user
