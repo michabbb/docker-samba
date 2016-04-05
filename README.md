@@ -1,3 +1,10 @@
+forked from ewindisch/docker-samba with changes
+================================================
+- use only one docker image
+- use exec for usermod
+- fix missing private path
+- mandatory: copy docker.template to docker
+
 Samba for Docker
 ================
 
