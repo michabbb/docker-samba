@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec -it samba /usr/local/bin/docker-smb-user
+docker exec -it samba /usr/local/bin/docker-smb-user $@
